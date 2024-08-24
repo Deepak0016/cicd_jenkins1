@@ -31,7 +31,7 @@ pipeline {
     }
     stage('Build and Push Docker Image') {
       environment {
-        DOCKER_IMAGE = "shehan404/ultimate-cicd:${BUILD_NUMBER}"
+        DOCKER_IMAGE = "deepaksahootech/ultimate-cicd:${BUILD_NUMBER}"
         // DOCKERFILE_LOCATION = "java-maven-sonar-argocd-helm-k8s/spring-boot-app/Dockerfile"
         REGISTRY_CREDENTIALS = credentials('docker-cred')
       }
@@ -48,7 +48,7 @@ pipeline {
     stage('Update Deployment File') {
         environment {
             GIT_REPO_NAME = "CICD-Project-1-Manifest"
-            GIT_USER_NAME = "shehan404"
+            GIT_USER_NAME = "Deepak0016"
         }
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
